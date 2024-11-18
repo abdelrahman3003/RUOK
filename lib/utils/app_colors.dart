@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 abstract class AppColors {
   static Color white = Colors.white;
   static Color black = Colors.black;
+  static Color grey = Colors.grey;
 
   // Gradient 1
+  
   static LinearGradient get lavenderGradient => const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
         colors: [
           Color(0xFFA7EEED),
           Color(0xFFE5BEFE),
@@ -18,8 +20,8 @@ abstract class AppColors {
 
   // Gradient 2
   static LinearGradient get roseGradient => const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
         colors: [
           Color(0xFFF2E3FB),
           Color(0xFFFFA5F3),
@@ -30,8 +32,8 @@ abstract class AppColors {
 
   // Gradient 3
   static LinearGradient get natureGradient => const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
         colors: [
           Color(0xFFD8FFCB),
           Color(0xFFBFE9E9),
@@ -42,8 +44,8 @@ abstract class AppColors {
 
   // Gradient 4
   static LinearGradient get sunsetGradient => const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
         colors: [
           Color(0xFFF4ADAD),
           Color(0xFFFFECCC),
@@ -54,8 +56,8 @@ abstract class AppColors {
 
   // Gradient 5
   static LinearGradient get oceanGradient => const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
         colors: [
           Color(0xFFFEEAB4),
           Color(0xFFF8D6EF),
@@ -66,8 +68,8 @@ abstract class AppColors {
 
   // Gradient 6
   static LinearGradient get cloudGradient => const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
         colors: [
           Color(0xFFFEC0A6),
           Color(0xFFB6B2F5),

@@ -11,7 +11,7 @@ class AppTextform extends StatelessWidget {
       decoration: InputDecoration(
           contentPadding: const EdgeInsets.all(20),
           hintText: hint,
-          hintStyle: AppStyles.style16font300black(context)
+          hintStyle: AppStyles.style16font300Grey(context)
               .copyWith(color: const Color(0xffAAAAAA)),
           filled: true,
           fillColor: const Color(0xffFAFAFA),

@@ -9,6 +9,7 @@ class Ruok extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: OnboardingView(),
+      //  home: Container(),
     );
   }
 }

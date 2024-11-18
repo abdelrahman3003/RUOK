@@ -22,6 +22,7 @@ abstract class AppStyles {
         fontFamily: "Manrope",
         color: Colors.white);
   }
+
   static TextStyle style24font500white(BuildContext context) {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontsize: 24),
@@ -29,6 +30,7 @@ abstract class AppStyles {
         fontFamily: "Manrope",
         color: Colors.white);
   }
+
   static TextStyle style22font500black(BuildContext context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontsize: 22),
@@ -38,21 +40,21 @@ abstract class AppStyles {
     );
   }
 
-  static TextStyle style20font300black(BuildContext context) {
+  static TextStyle style20font300Grey(BuildContext context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontsize: 20),
       fontWeight: FontWeight.w300,
       fontFamily: "Manrope",
-      color: const Color(0xff18161980),
+      color: AppColors.grey,
     );
   }
 
-  static TextStyle style16font300black(BuildContext context) {
+  static TextStyle style16font300Grey(BuildContext context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontsize: 16),
       fontWeight: FontWeight.w300,
       fontFamily: "Manrope",
-      color: const Color(0xff18161980),
+      color: AppColors.grey,
     );
   }
 }
