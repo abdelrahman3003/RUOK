@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ruok/utils/app_colors.dart';
 
-import '../../../utils/app_styles.dart';
+import '../../../../utils/app_styles.dart';
 
 class OnbordingViewItem extends StatelessWidget {
   const OnbordingViewItem(
@@ -22,8 +22,7 @@ class OnbordingViewItem extends StatelessWidget {
         duration: const Duration(milliseconds: 300),
         decoration: BoxDecoration(
           border: Border.all(
-              width: 2,
-              color: isActive ? AppColors.white : const Color(0xffC3B0FB)),
+              width: 2, color: isActive ? AppColors.white : AppColors.grey),
           borderRadius: BorderRadius.circular(18),
           gradient: linearGradient,
         ),

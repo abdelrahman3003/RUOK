@@ -49,6 +49,15 @@ abstract class AppStyles {
     );
   }
 
+  static TextStyle style18font300Grey(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontsize: 18),
+      fontWeight: FontWeight.w300,
+      fontFamily: "Manrope",
+      color: AppColors.grey,
+    );
+  }
+
   static TextStyle style16font300Grey(BuildContext context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontsize: 16),
@@ -73,6 +82,6 @@ double getScaleFactor(BuildContext context) {
   } else if (width < SizeConfig.desktop) {
     return width / 1000;
   } else {
-    return width / 3000;
+    return width / 1950;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ruok/utils/app_colors.dart';
 
 import 'app_styles.dart';
 
@@ -11,10 +12,9 @@ class AppTextform extends StatelessWidget {
       decoration: InputDecoration(
           contentPadding: const EdgeInsets.all(20),
           hintText: hint,
-          hintStyle: AppStyles.style16font300Grey(context)
-              .copyWith(color: const Color(0xffAAAAAA)),
+          hintStyle: AppStyles.style18font300Grey(context),
           filled: true,
-          fillColor: const Color(0xffFAFAFA),
+          fillColor: const Color(0x59FFFFFF),
           border: buildBorder(),
           enabledBorder: buildBorder()),
     );
@@ -22,7 +22,9 @@ class AppTextform extends StatelessWidget {
 
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(style: BorderStyle.none));
+        borderRadius: BorderRadius.circular(18),
+        borderSide: BorderSide(
+            width: 5, // تعيين سماكة الحدود إلى 2
+            color: AppColors.white));
   }
 }

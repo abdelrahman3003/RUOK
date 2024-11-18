@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ruok/utils/app_button.dart';
 import 'package:ruok/view/onboarding/widget/dot_list.dart';
-import 'package:ruok/view/onboarding/widget/onboardding_bottom_text.dart';
+import 'package:ruok/view/onboarding/widget/login/login_view.dart';
 import 'package:ruok/view/onboarding/widget/onboarding_header.dart';
 
 import '../../model/onboarding_item_model.dart';
 import '../../utils/app_colors.dart';
-import 'widget/onboarding_item_list._view.dart';
+import 'widget/select_color/select_color_body.dart';
+import 'widget/select_image/select_image_body.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -19,12 +20,12 @@ class OnboardingView extends StatefulWidget {
 List<OnboardingItemModel> onboardingItemModelList = [
   OnboardingItemModel(
     name: "Lavender",
-    linearGradient: AppColors.roseGradient,
+    linearGradient: AppColors.lavenderGradient,
     buttonVColor: const Color(0xff3963F5),
   ),
   OnboardingItemModel(
       name: "Rose",
-      linearGradient: AppColors.lavenderGradient,
+      linearGradient: AppColors.roseGradient,
       buttonVColor: const Color(0xffFB3B96)),
   OnboardingItemModel(
       name: "Nature",
@@ -42,12 +43,14 @@ List<OnboardingItemModel> onboardingItemModelList = [
       name: "Clouds",
       linearGradient: AppColors.cloudGradient,
       buttonVColor: const Color(0xffFB3B96)),
-  OnboardingItemModel(
-      name: "Clouds",
-      linearGradient: AppColors.cloudGradient,
-      buttonVColor: const Color(0xff9072EE)),
 ];
-int? indexActive;
+int? backgroundindex;
+int? pageViewindex;
+List<Widget> onboardingPageviewList = [
+  SelectColorBody(onboardingItemModelList: onboardingItemModelList),
+  const SelectImageBody(),
+  const LoginView(),
+];
 
 class _OnboardingViewState extends State<OnboardingView> {
   @override
@@ -55,34 +58,42 @@ class _OnboardingViewState extends State<OnboardingView> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            gradient: indexActive == null
+            gradient: backgroundindex == null
                 ? null
-                : onboardingItemModelList[indexActive!].linearGradient),
+                : onboardingItemModelList[backgroundindex!].linearGradient),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32),
           child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 32),
                 const OnboardingHeader(),
                 const SizedBox(height: 41),
-                OnboardingItemListView(
-                  onboardingItemModelList: onboardingItemModelList,
+                AspectRatio(
+                  aspectRatio: .6,
+                  child: PageView.builder(
+                    onPageChanged: (value) {
+                      pageViewindex = value;
+                      setState(() {});
+                    },
+                    itemCount: onboardingPageviewList.length,
+                    itemBuilder: (context, index) =>
+                        onboardingPageviewList[index],
+                  ),
                 ),
                 const SizedBox(height: 40),
-                const OnboarddingBottomText(),
-                const SizedBox(height: 21),
-                const DotList(indexIsActive: 0),
-                const SizedBox(height: 21),
+                DotList(indexIsActive: pageViewindex ?? 0),
+                const SizedBox(height: 15),
                 SizedBox(
                     width: double.infinity,
                     child: AppButton(
                       title: "Let’s Go",
-                      color: indexActive == null
+                      color: pageViewindex == null
                           ? AppColors.black
-                          : onboardingItemModelList[indexActive!].buttonVColor,
-                    ))
+                          : onboardingItemModelList[pageViewindex!]
+                              .buttonVColor,
+                    )),
+                const SizedBox(height: 10),
               ],
             ),
           ),
