@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../model/onboarding_item_model.dart';
-import 'onboardding_bottom_text.dart';
+import '../onboardding_bottom_text.dart';
 import 'onbording_view_item.dart';
 
 class SelectColorBody extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../../utils/app_styles.dart';
+import '../../../utils/app_styles.dart';
 
 class OnboarddingBottomText extends StatelessWidget {
   const OnboarddingBottomText(

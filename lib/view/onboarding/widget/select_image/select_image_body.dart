@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ruok/gen/assets.gen.dart';
 import 'package:ruok/view/onboarding/widget/select_image/image_item.dart';
 
-import '../select_color/onboardding_bottom_text.dart';
+import '../onboardding_bottom_text.dart';
 
 class SelectImageBody extends StatelessWidget {
   const SelectImageBody({super.key});

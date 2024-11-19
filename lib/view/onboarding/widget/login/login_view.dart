@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ruok/utils/app_textform.dart';
-import 'package:ruok/view/onboarding/widget/select_color/onboardding_bottom_text.dart';
+import 'package:ruok/view/onboarding/widget/onboardding_bottom_text.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
